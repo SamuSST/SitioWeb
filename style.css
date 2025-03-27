@@ -1,0 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #554848;
+}
+
+/* Nuevas reglas para el contenedor del menú */
+.menuCSS3 {
+    width: 100%;
+    background-color: #42f93c; /* Mover el color de fondo aquí */
+}
+
+.menuCSS3 ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    justify-content: space-around; /* Distribuye los items equitativamente */
+}
+
+.menuCSS3 a {
+    display: block;
+    padding: 1em 2em;
+    text-decoration: none;
+    color: #191C26;
+    transition: all 0.3s;
+    text-align: center;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.menuCSS3 > ul > li {
+    flex-grow: 1; /* Hace que cada li ocupe todo el espacio disponible */
+    text-align: center;
+}
+
+.menuCSS3 > ul > li > a {
+    background-color: transparent; /* Elimina el fondo doble */
+}
+
+.menuCSS3 a:hover {
+    background-color: #2ab157;
+    color: white;
+}
+
+.menuCSS3 ul li {
+    position: relative;
+}
+
+.menuCSS3 ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: hsl(141, 100%, 53%);
+    min-width: 200px;
+    z-index: 1000;
+    width: 100%; /* Submenús ocupan el ancho completo del item padre */
+    box-sizing: border-box;
+}
+
+.menuCSS3 ul li:hover > ul {
+    display: block;
+}
+
+.menuCSS3 ul li ul li a {
+    padding: 1em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .menuCSS3 ul {
+        flex-direction: column;
+    }
+    
+    .menuCSS3 ul li {
+        width: 100%;
+    }
+    
+    .menuCSS3 a {
+        padding: 1em;
+        text-align: center;
+    }
+    
+    .menuCSS3 ul li ul {
+        position: static;
+        display: none;
+        width: 100%;
+    }
+    
+    .menuCSS3 ul li:hover ul {
+        display: block;
+    }
+}
